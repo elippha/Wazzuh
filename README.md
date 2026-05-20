@@ -6,7 +6,7 @@
 ![Kali](https://img.shields.io/badge/Kali-Linux-557C94?style=for-the-badge&logo=kalilinux)
 ![MITRE](https://img.shields.io/badge/MITRE-ATT%26CK-red?style=for-the-badge)
 
-> A fully functional SOC home lab built on Kali Linux, using Wazuh as the SIEM/XDR platform and TheHive for case management and incident reporting — with real attack simulations and documented incident reports.
+> A fully functional SOC home lab built on Kali Linux, using Wazuh as the SIEM/XDR platform and TheHive for case management and incident reporting with real attack simulations and documented incident reports.
 
 ---
 
@@ -60,11 +60,6 @@ This is not just a setup guide it includes **real incident reports** from alerts
 │  (Elippha)   │       │  (Estelle)        │
 └──────────────┘       └──────────────────┘
 ```
-
-### Wazuh Dashboard — Active Agents
-
-![Wazuh Dashboard](screenshots/Wazuh%20dashboard.png)
-
 ---
 
 ## Prerequisites
@@ -147,6 +142,10 @@ NET STOP WazuhSvc
 NET START WazuhSvc
 Get-Service -Name "WazuhSvc"
 ```
+
+### Wazuh Dashboard — Active Agents
+
+![Wazuh Dashboard](screenshots/Wazuh%20dashboard.png)
 
 ---
 
@@ -334,6 +333,9 @@ echo '{"rule":{"level":8,"description":"Test alert"},"agent":{"name":"test-agent
 sudo python3 /var/ossec/integrations/custom-thehive /tmp/test-alert.json
 # Expected: Case created successfully: ~123456789
 ```
+### TheHive — Cases List
+
+![TheHive Cases](screenshots/Thehive%20case.png)
 
 ---
 
@@ -356,11 +358,6 @@ Case marked Resolved in TheHive
          ↓
 Wazuh rescans → alert count drops
 ```
-
-### TheHive — Cases List
-
-![TheHive Cases](screenshots/Thehive%20case.png)
-
 ---
 
 ## Part 6: Incident Reports
@@ -528,4 +525,4 @@ All attack simulations were conducted in a **controlled lab environment** on mac
 
 ---
 
-*If this helped you, consider giving it a ⭐ — and feel free to open an issue or PR if you spot improvements!*
+*If this helped you, consider giving it a ⭐ and feel free to open an issue or PR if you spot improvements!*
