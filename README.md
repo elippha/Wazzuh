@@ -375,6 +375,10 @@ Wazuh rescans → alert count drops
 **Alert:**
 > Trojaned version of file `/bin/chfn` detected. Signature: `bash|file.h|proc.h|/dev/ttyo` (Generic)
 
+### TheHive Case 18 Detail
+
+![Case 90](screenshots/case18.png)
+
 **Investigation Commands:**
 
 ```bash
@@ -434,6 +438,10 @@ hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://127.0.0.1 -t 4 -V
 
 ![Hydra Attack](screenshots/Hydra.png)
 
+### TheHive Case 90 Detail
+
+![Case 90](screenshots/case90.png)
+
 **Attack Timeline:**
 
 | Time | Event |
@@ -467,9 +475,6 @@ monkey, sunshine, chocolate, 111111, iloveu
 - Wazuh detected the attack within **6 seconds** of it starting
 - Rule 5763 fired 6 times indicating a sustained attack pattern
 
-### TheHive — Case 90 Detail
-
-![Case 90](screenshots/case90.png)
 
 **Conclusion:** ⚠️ TRUE POSITIVE (Simulated) — Detection worked correctly.
 
