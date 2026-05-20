@@ -61,6 +61,10 @@ This is not just a setup guide it includes **real incident reports** from alerts
 └──────────────┘       └──────────────────┘
 ```
 
+### Wazuh Dashboard — Active Agents
+
+![Wazuh Dashboard](screenshots/Wazuh%20dashboard.png)
+
 ---
 
 ## Prerequisites
@@ -225,16 +229,14 @@ http://localhost:9000
 Default login: `admin@thehive.local` / `secret`
 
 If you encounter login errors:
- 
+
 ```bash
 docker exec -it thehive bash
 
 curl -XPOST -H "Content-Type: application/json" \
   http://localhost:9000/api/login \
   -d '{"user":"admin@thehive.local","password":"secret"}'
-
 ```
- 
 
 ### Initial Setup
 
@@ -355,6 +357,10 @@ Case marked Resolved in TheHive
 Wazuh rescans → alert count drops
 ```
 
+### TheHive — Cases List
+
+![TheHive Cases](screenshots/Thehive%20case.png)
+
 ---
 
 ## Part 6: Incident Reports
@@ -427,6 +433,10 @@ sudo systemctl restart wazuh-manager
 hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://127.0.0.1 -t 4 -V
 ```
 
+### Hydra Brute Force Running
+
+![Hydra Attack](screenshots/Hydra.png)
+
 **Attack Timeline:**
 
 | Time | Event |
@@ -459,6 +469,10 @@ monkey, sunshine, chocolate, 111111, iloveu
 - All 36 attempts failed — root account not compromised
 - Wazuh detected the attack within **6 seconds** of it starting
 - Rule 5763 fired 6 times indicating a sustained attack pattern
+
+### TheHive — Case 90 Detail
+
+![Case 90](screenshots/case90.png)
 
 **Conclusion:** ⚠️ TRUE POSITIVE (Simulated) — Detection worked correctly.
 
